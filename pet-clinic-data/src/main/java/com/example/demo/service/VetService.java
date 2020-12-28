@@ -5,9 +5,6 @@ import com.example.demo.model.Vet;
 
 import java.util.Set;
 
-public interface VetService {
+public interface VetService extends CrudService<Vet, Long>{
 
-    Vet getById(Long id);
-    Vet saveOwner(Vet owner);
-    Set<Vet> findAll();
 }
