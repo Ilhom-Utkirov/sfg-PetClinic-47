@@ -38,6 +38,6 @@ public class OwnerServiceMap extends  AbstracMapService<Owner, Long> implements 
 
     @Override
     public Owner getByLastName(String lastname) {
-        return null;
+        return getByLastName(lastname);
     }
 }
