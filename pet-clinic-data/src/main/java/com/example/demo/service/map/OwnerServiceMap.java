@@ -1,11 +1,11 @@
 package com.example.demo.service.map;
 
 import com.example.demo.model.Owner;
-import com.example.demo.service.CrudService;
+import com.example.demo.service.OwnerService;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends  AbstracMapService<Owner, Long> implements CrudService<Owner,Long> {
+public class OwnerServiceMap extends  AbstracMapService<Owner, Long> implements OwnerService {
 
     @Override
     public Owner save(Owner object) {
@@ -32,5 +32,10 @@ public class OwnerServiceMap extends  AbstracMapService<Owner, Long> implements 
     @Override
     public void deleteById(Long id) {
         super.deleteById(id);
+    }
+
+    @Override
+    public Owner getByLastName(String lastname) {
+        return null;
     }
 }

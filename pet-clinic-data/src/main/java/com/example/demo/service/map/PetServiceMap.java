@@ -1,11 +1,11 @@
 package com.example.demo.service.map;
 
 import com.example.demo.model.Pet;
-import com.example.demo.service.CrudService;
+import com.example.demo.service.PetService;
 
 import java.util.Set;
 
-public class PetServiceMap extends AbstracMapService<Pet,Long> implements CrudService<Pet,Long> {
+public class PetServiceMap extends AbstracMapService<Pet,Long> implements PetService {
     @Override
     public Pet save(Pet pet) {
         return super.save(pet.getId(),pet);
