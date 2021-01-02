@@ -2,9 +2,11 @@ package com.example.demo.service.map;
 
 import com.example.demo.model.Owner;
 import com.example.demo.service.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends  AbstracMapService<Owner, Long> implements OwnerService {
 
     @Override
