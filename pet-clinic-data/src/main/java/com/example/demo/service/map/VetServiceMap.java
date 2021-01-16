@@ -1,6 +1,8 @@
 package com.example.demo.service.map;
 
+import com.example.demo.model.Speciality;
 import com.example.demo.model.Vet;
+import com.example.demo.service.SpecialityService;
 import com.example.demo.service.VetService;
 import org.springframework.stereotype.Service;
 
@@ -8,9 +10,30 @@ import java.util.Set;
 
 @Service
 public class VetServiceMap extends AbstracMapService<Vet,Long> implements VetService {
+
+    private final SpecialityService specialityService;
+
+    public VetServiceMap(SpecialityService specialityService) {
+        this.specialityService = specialityService;
+    }
+
+
     @Override
     public Vet save(Vet object) {
         //return super.save(object.getId(),object);
+
+        if (object.getSpecialities().size()>0){
+            object.getSpecialities().forEach(speciality -> {
+                if (speciality.getId() == null){
+                    Speciality savedSpeciality = specialityService.save(speciality);
+                    speciality.setId(savedSpeciality.getId()); //to double check
+
+
+
+                }
+            });
+        }
+
         return super.save(object);
     }
 
