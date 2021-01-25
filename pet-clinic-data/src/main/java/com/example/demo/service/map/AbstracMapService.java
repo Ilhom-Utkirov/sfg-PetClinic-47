@@ -22,7 +22,7 @@ protected Map<Long, T> map = new HashMap<>();
             }
             map.put(object.getId(), object);
         } else {
-            throw new RuntimeException("Object cannot be null. See Abstract MapService");
+            throw new RuntimeException("Object cannot be null. See Abstract MapService carefully");
         }
         //map.put(id, object );
         return  object;
