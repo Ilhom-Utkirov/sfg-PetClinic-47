@@ -10,11 +10,11 @@ import java.util.HashSet;
 import java.util.Set;
 @Service
 @Profile("springdatajpa")
-public class PetJpaRepository implements PetService {
+public class PetJpaService implements PetService {
 
     private final PetRepository petRepository;
 
-    public PetJpaRepository(PetRepository petRepository) {
+    public PetJpaService(PetRepository petRepository) {
         this.petRepository = petRepository;
     }
 
