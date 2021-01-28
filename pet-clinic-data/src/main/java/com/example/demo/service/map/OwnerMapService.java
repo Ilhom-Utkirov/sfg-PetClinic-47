@@ -28,7 +28,7 @@ public class OwnerMapService extends  AbstracMapService<Owner, Long> implements 
         if(object !=null){
             if (object.getPets() !=null){
                 object.getPets().forEach(pet -> {
-                    if (pet.getPetType() !=null){
+                    if ( pet.getPetType() !=null){
                         if (pet.getPetType().getId() ==null){
                             pet.setPetType(petTypeService.save(pet.getPetType()));
                         }
