@@ -3,6 +3,7 @@ package com.example.demo.model;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+//@MappedSuperclass
 @Entity
 @Table(name = "visits")
 public class Visit extends BaseEntity{

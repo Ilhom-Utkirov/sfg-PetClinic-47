@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
+//@MappedSuperclass
 @Entity
 @Table(name = "pets")
 public class Pet extends BaseEntity{
@@ -12,11 +13,11 @@ public class Pet extends BaseEntity{
     @Column(name = "name")
     private String name;
 
-    @ManyToOne
+    @ManyToOne( cascade = CascadeType.ALL)
     @JoinColumn(name = "type_id")
     private  PetType petType;
 
-    @ManyToOne
+    @ManyToOne( cascade = CascadeType.ALL)
     @JoinColumn(name = "owner_id")
     private Owner owner;
 

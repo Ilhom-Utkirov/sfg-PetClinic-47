@@ -2,10 +2,14 @@ package com.example.demo.service.map;
 
 import com.example.demo.model.Visit;
 import com.example.demo.service.VisitService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
+
+
 @Service
+@Profile({"default","map"})
 public class VisitMapService extends AbstracMapService<Visit, Long> implements VisitService {
 
     @Override

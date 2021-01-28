@@ -12,12 +12,13 @@ public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
+
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
     private final VisitService visitService;
 
     public DataLoader(OwnerService ownerService, VetService vetService,
-                      PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService) {
+                      PetService petService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         //ownerService = ownerService;
