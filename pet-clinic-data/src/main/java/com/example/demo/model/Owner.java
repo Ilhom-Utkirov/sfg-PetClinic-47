@@ -18,10 +18,10 @@ public class Owner extends Person{
     private String telephone;
 
     //compelety mapping for the owner
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+    //@OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+    @OneToMany(cascade = CascadeType.ALL,
+            mappedBy = "owner")
     private Set<Pet> pets = new HashSet<>();
-
-    
 
     public String getAddress() {
         return address;

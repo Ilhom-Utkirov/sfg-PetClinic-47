@@ -18,6 +18,7 @@ public class OwnerMapService extends  AbstracMapService<Owner, Long> implements 
     private final PetTypeService petTypeService;
     private final PetService petService;
 
+
     public OwnerMapService(PetTypeService petTypeService, PetService petService) {
         this.petTypeService = petTypeService;
         this.petService = petService;
@@ -75,7 +76,7 @@ public class OwnerMapService extends  AbstracMapService<Owner, Long> implements 
     }
 
     @Override
-    public Owner getByLastName(String lastname) {
-        return getByLastName(lastname);
+    public Owner findByLastName(String lastName) {
+        return null;//findByLastName(lastname);
     }
 }

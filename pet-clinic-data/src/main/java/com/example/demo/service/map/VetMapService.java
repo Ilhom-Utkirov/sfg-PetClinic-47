@@ -2,7 +2,7 @@ package com.example.demo.service.map;
 
 import com.example.demo.model.Speciality;
 import com.example.demo.model.Vet;
-import com.example.demo.service.SpecialityService;
+import com.example.demo.service.SpecialtyService;
 import com.example.demo.service.VetService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
@@ -14,12 +14,11 @@ import java.util.Set;
 @Profile({"default","map"})
 public class VetMapService extends AbstracMapService<Vet,Long> implements VetService {
 
-    private final SpecialityService specialityService;
+    private final SpecialtyService specialityService;
 
-    public VetMapService(SpecialityService specialityService) {
+    public VetMapService(SpecialtyService specialityService) {
         this.specialityService = specialityService;
     }
-
 
     @Override
     public Vet save(Vet object) {
@@ -30,9 +29,6 @@ public class VetMapService extends AbstracMapService<Vet,Long> implements VetSer
                 if (speciality.getId() == null){
                     Speciality savedSpeciality = specialityService.save(speciality);
                     speciality.setId(savedSpeciality.getId()); //to double check
-
-
-
                 }
             });
         }

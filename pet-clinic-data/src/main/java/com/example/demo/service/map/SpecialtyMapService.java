@@ -1,7 +1,7 @@
 package com.example.demo.service.map;
 
 import com.example.demo.model.Speciality;
-import com.example.demo.service.SpecialityService;
+import com.example.demo.service.SpecialtyService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +10,7 @@ import java.util.Set;
 
 @Service
 @Profile({"default","map"})
-public class SpecialityMapService extends AbstracMapService<Speciality,Long> implements SpecialityService {
+public class SpecialtyMapService extends AbstracMapService<Speciality,Long> implements SpecialtyService {
     @Override
     public Speciality save(Speciality object) {
         return super.save(object);

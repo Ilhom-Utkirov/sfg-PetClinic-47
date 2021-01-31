@@ -5,6 +5,6 @@ import com.example.demo.model.Owner;
 //public interface OwnerService extends CrudService<Owner, Long> {
 public interface OwnerService extends CrudService<Owner, Long> {
 
-    Owner getByLastName(String lastname);
+    Owner findByLastName(String lastname);
 
 }
