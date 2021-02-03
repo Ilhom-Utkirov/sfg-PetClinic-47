@@ -1,6 +1,9 @@
 package com.example.demo.model;
 
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -10,11 +13,21 @@ import java.util.Set;
 @Setter
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
 @Builder
 @Entity
 @Table(name = "owners")
 public class Owner extends Person{
+
+    @Builder
+    public Owner(Long id,String firstName, String lastName, String address, String city, String telephone, Set<Pet> pets) {
+
+        super(id,firstName, lastName);
+        this.address = address;
+        this.city = city;
+        this.telephone = telephone;
+        this.pets = pets;
+    }
 
     @Column(name = "address")
     private String address;
@@ -31,4 +44,12 @@ public class Owner extends Person{
             mappedBy = "owner")
     private Set<Pet> pets = new HashSet<>();
 
+
+
+    public Owner(String address, String city, String telephone, Set<Pet> pets) {
+        this.address = address;
+        this.city = city;
+        this.telephone = telephone;
+        this.pets = pets;
+    }
 }
