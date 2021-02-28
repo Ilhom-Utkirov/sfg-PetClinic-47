@@ -27,8 +27,6 @@ public class OwnerMapService extends  AbstracMapService<Owner, Long> implements 
     @Override
     public Owner save(Owner object) {
        // return super.save(object.getId(),object);
-
-
         if(object !=null){
             if (object.getPets() !=null){
                 object.getPets().forEach(pet -> {
@@ -77,7 +75,6 @@ public class OwnerMapService extends  AbstracMapService<Owner, Long> implements 
 
     @Override
     public Owner findByLastName(String lastName) {
-
         return this.findAll()
                     .stream()
                     .filter(owner -> owner.getLastName().equalsIgnoreCase(lastName))

@@ -12,12 +12,13 @@ import java.util.HashSet;
 import java.util.Set;
 @Service
 @Profile("springdatajpa")
-public class ownerJpaService implements OwnerService {
+public class OwnerJpaService implements OwnerService {
 
     private final OwnerRepository ownerRepository;
     private final PetRepository petRepository;
     private final PetTypeRepository petTypeRepository;
-    public ownerJpaService(OwnerRepository ownerRepository,
+
+    public OwnerJpaService(OwnerRepository ownerRepository,
                            PetRepository petRepository,
                            PetTypeRepository petTypeRepository) {
         this.ownerRepository = ownerRepository;
